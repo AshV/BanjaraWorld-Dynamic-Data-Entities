@@ -22,10 +22,10 @@
         // Note: Make sure that you change "YourDataContextType" to the name of the data context
         // class in your application.
         // See https://go.microsoft.com/fwlink/?LinkId=257395 for more information on how to register Entity Data Model with Dynamic Data            
-        //DefaultModel.RegisterContext(() =>
-        //{
-        //    return ((IObjectContextAdapter)new YourDataContextType()).ObjectContext;
-        //}, new ContextConfiguration() { ScaffoldAllTables = false });
+        DefaultModel.RegisterContext(() =>
+        {
+            return ((System.Data.Entity.Infrastructure.IObjectContextAdapter)new Chandan_Banjara_WorldEntities()).ObjectContext;
+        }, new ContextConfiguration() { ScaffoldAllTables = true });
 
         // The following registration should be used if YourDataContextType does not derive from DbContext
         // DefaultModel.RegisterContext(typeof(YourDataContextType), new ContextConfiguration() { ScaffoldAllTables = false });
